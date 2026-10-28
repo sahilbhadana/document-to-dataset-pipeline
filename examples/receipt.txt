@@ -1,0 +1,9 @@
+MORNING STAR MARKET
+Receipt 1842
+Date: 2026-03-14
+Currency: USD
+
+Subtotal: 24.00
+Tax: 1.92
+Total: 25.92
+Payment method: card

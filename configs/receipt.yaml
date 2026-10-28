@@ -1,0 +1,37 @@
+doc_type: receipt
+output_table: silver_receipts
+confidence_threshold: 0.75
+fields:
+  - name: merchant_name
+    type: string
+    description: Name of the merchant printed on the receipt.
+    required: true
+  - name: transaction_date
+    type: date
+    description: Local transaction date in ISO 8601 format (YYYY-MM-DD).
+    required: true
+    regex: "^\\d{4}-\\d{2}-\\d{2}$"
+  - name: currency
+    type: string
+    description: ISO 4217 currency code.
+    required: true
+    regex: "^[A-Z]{3}$"
+  - name: total_amount
+    type: number
+    description: Final amount paid, excluding any separately listed change.
+    required: true
+    min: 0
+  - name: tax_amount
+    type: number
+    description: Total tax charged on the transaction.
+    required: false
+    min: 0
+  - name: payment_method
+    type: string
+    description: Payment method shown on the receipt, when present.
+    required: false
+    allowed_values:
+      - cash
+      - card
+      - mobile
+      - other
